@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vintage Cars</title>
+	<link rel="stylesheet" href="CSS/style.css">
+<style>
+body {
+	background-image:url("pictures/vintage_car13.jpg");
+}
+
+button.accordion {
+    background-color:rgba(0,0,0,0.7);
+    color: white;
+    cursor: pointer;
+    margin:200px,300px;
+    padding: 20px;
+    width: 100%;
+    border:none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: rgb(0,0,0); 
+}
+
+div.panel {
+    font-style:italic;
+    color:white;
+    display: none;   
+}
+</style>
+</head>
+<body>
+	<header>
+		<nav>
+		<h1>Vintage Cars</h1>
+		<ul id="nav">
+		  <li><a class="homeblack" href="home.html">HOME</a></li>
+		  <li><a class="homeblack" href="about_us.html">ABOUT US</a></li>
+		  <li><a class="homeblack" href="contact.html">CONTACT</a></li>
+		  <li><a class="homered" href="#">FAQ</a></li>
+		</ul>
+		</nav>
+	</header>
+	<div class="divider"></div>
+	<h1><font face="verdana" color="white">FAQ's</h1>
+
+<button class="accordion">Will I be charged if I return the car late?</button>     
+<div class="panel">
+  <p>Our rental is based on a daily rate, so youíll likely face a penalty if you return the vehicle after the agreed-upon date. If you know youíll be late, call ahead and ask about a rental extension, which may cost less than the late fee. We may also offer a grace period, so itís always a good idea to know what your options are.</p>
+</div>
+
+<button class="accordion">What if the rental develops a mechanical problem?</button>   
+<div class="panel">
+  <p>Cars in our rental fleets are very well maintained, but make sure you know what your options are when the vehicle breaks down. Contact us immediately, helping us know the type of mechanical issues covered, if any, in the quoted daily rate. We will gladly arrange for a new car if the one that was initially provided has a problem. We will provide a free tow truck to get you back into a new car</p>
+</div>
+
+<button class="accordion">If you donít have the car I reserved, do you upgrade for free?</button>   
+<div class="panel">
+  <p>When you reserved a particular class of car, if we donít have one available, we would upgrade you to the next available class at no charge. It is the hallmark of customer service.</p>
+</div>
+
+
+<button class="accordion">What does the insurance cover?</button>     
+<div class="panel">
+  <p>We usually offer two types of insurances: basic and extended. Basic provides limited protection from personal injury and property damage while extended covers anything that happens to the car. </p>
+</div>
+
+
+<button class="accordion">What are the limitations of travel and/or drivers?</button>   
+<div class="panel">
+  <p>Also noted in the contract is who is allowed to drive the car and in or through what states you are allowed to travel. Increasing the number of drivers or where you can go may increase the price of the rental.</p>
+</div>
+
+
+<button class="accordion">Can you rent a car if you are 18?</button>  
+<div class="panel">
+  <p>As per the laws, the minimum age for driving a car is 18 years old, but drivers aged 18 to 20 years must pay a surcharge. This supplement cannot be settled in advance and must be paid at time of pickup.</p>
+</div>
+
+
+<button class="accordion">What are your extra insurance options?</button>    
+<div class="panel">
+  <p>You likely wonít have to ask about extra insurance options, as we offer them at the counter. The collision damage waiver or CDW, also known as the loss damage waiver, waives you of responsibility for loss or damage to the rental vehicle. Personal auto insurance policies and some credit cards offer an amount of insurance protection for rental cars, so check your policy prior to purchasing any additional insurance from us.</p>
+</div>
+
+
+<button class="accordion">Can you get a rental car at the airport?</button> 
+<div class="panel">
+  <p>. Whether you're flying for business or pleasure, getting a car at the airport is quick and easy with Hertz. Simply take a shuttle from your terminal to the Hertz counter, pick up your car and you're on your way.</p>
+</div>
+
+
+<button class="accordion">Can I rent a car without a credit card?</button>    
+<div class="panel">
+  <p>A credit card was once required to rent a vehicle, but we now accept other forms of payment. Without a credit card, however, you may be asked to provide additional documentation and/or a security deposit.</p>
+</div>
+
+
+<button class="accordion">Am I required to purchase your damage and loss insurance?</button>     
+<div class="panel">
+  <p>Our company offers insurance against accidents and theft, but if you already own a car, your personal auto insurance may cover any damages or loss to the rental.</p>
+</div>
+
+
+<button class="accordion">What is the charge for returning the car late?</button>     
+<div class="panel">
+  <p>If unexpected circumstances occur, and if you find yourself unable to return the car before the time specified, it should be good to know the potential charge ahead of time.</p>
+</div>
+
+
+<button class="accordion">What taxes or fees will be added to the rental fee?</button>   
+<div class="panel">
+  <p>Itís always a good idea to learn about all possible taxes, fees, and other charges before deciding to rent a car.</p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    }
+}
+</script>
+
+
+</body>
+</html>

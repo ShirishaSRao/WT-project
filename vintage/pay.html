@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>booking</title>
+<link rel="stylesheet" href="CSS/pay.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+<style>
+#date { background: url(img/icons_calendar_black.png) no-repeat 95%; }
+#cardholder { background: url(img/icons_person_black.png) no-repeat 95%; }
+#cardnumber { background: url(img/icons_card_black.png) no-repeat 95%; }
+#verification { background: url(img/icons_lock_black.png) no-repeat 95%; }
+</style>
+<script>
+$( document ).ready(function() {
+$( function() {
+  var dateToday = new Date();
+  var dates = $("#start-date, #end-date").datepicker({
+    defaultDate: "+2d",
+    changeMonth: true,
+    numberOfMonths: 1,
+    minDate: dateToday,
+    onSelect: function(selectedDate) {
+        var option = this.id == "start-date" ? "minDate" : "maxDate",
+        instance = $(this).data("datepicker"),
+        date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+        dates.not(this).datepicker("option", option, date);
+    }
+  });
+});
+});
+
+function disableSubmit() {
+  document.getElementById("submit").disabled = true;
+ }
+
+  function activateButton(element) {
+
+      if(element.checked) {
+        document.getElementById("submit").disabled = false;
+       }
+       else  {
+	alert("please click on I agree");
+        document.getElementById("submit").disabled = true;
+	      }
+
+  }
+
+</script>
+
+</head>
+<body onload="disableSubmit()">
+<div class="checkout-panel4">
+  <div class="panel-body">
+<h4 class="title">Prerequisites</h4>
+<h4> You have to pay an advance of rs.5000 which is refundable at the time of return of the car. The cash is collected at the time of return of the car and is dependent on the condition of the car at time of return. Please fill out the fields below and the documents mentioned below should be brought by you to the pick up location for verification .</h4> 
+ 
+<div class="checkout-panel3">
+  <div class="panel-body">
+    <h4 class="title">Documents</h2>
+	<div class="form-group">
+            <label for="check-in">Select a minimum of 2 documents(apart from the compulsory documents):</label><br> 
+               <input type="checkbox" class="rad" checked><span class="sp">Driver licence*</span></input><br>
+	       <input type="checkbox" class="rad"><span class="sp">PAN card</span></input><br>
+	       <input type="checkbox" class="rad"><span class="sp">Aadhar card</span></input><br>
+	       <input type="checkbox" class="rad"><span class="sp">passport</span></input><br>
+	       <input type="checkbox" class="rad" checked><span class="sp">voter ID*</span></input><br>	
+        </div> 
+	
+ <div class="checkout-panel3">
+  <div class="panel-body">
+    <h2 class="title">Pick up location</h2>
+	<div class="form-group">
+               <label for="check-in">location:</label> 
+               <input type="text"  placeholder="enter pick up location">
+        </div>   
+ <div class="checkout-panel2">
+  <div class="panel-body">
+    <h2 class="title">Dates</h2>
+	<table align="center">
+	<tr>
+	<td>
+	<div class="form-group">
+               <label for="check-in">Start Date</label> 
+               <input type="text"  class="form-control" id="start-date" name="start-date" placeholder="mm/dd/yyyy">
+        </div>
+        </td>   
+	<td> 
+        <div class="form-group">
+               <label for="check-out">End Date</label> 
+               <input type="text" class="form-control" id="end-date" name="end-date" placeholder="mm/dd/yyyy" >
+        </div>
+	</td>
+	</tr>
+	</table>
+<div class="checkout-panel1">
+  <div class="panel-body">
+    <h2 class="title">Payment</h2>
+ 
+   <div class="input-fields">
+      <div class="column-1">
+        <label for="cardholder">Cardholder's Name</label>
+	<input type="text" id="cardholder" />
+ 
+        <div class="small-inputs">
+          <div>
+            <label for="date">Valid thru</label>
+            <input type="text" id="date" placeholder="MM / YY" />
+          </div>
+ 
+          <div>
+            <label for="verification">CVV / CVC *</label>
+            <input type="password" id="verification"/>
+          </div>
+        </div>
+ 
+      </div>
+      <div class="column-2">
+        <label for="cardnumber">Card Number</label>
+        <input type="password" id="cardnumber"/>
+ 
+        <span class="info">* CVV or CVC is the card security code, unique three digits number on the back of your card separate from its number.</span>
+      </div>
+    </div>
+<div class="checkout-panel5">
+  <div class="panel-body">
+	<input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  I Agree to the terms & Coditions and will hold myself responsible to the car when it is in my hands. 
+<br><br>
+  <input type="submit" name="submit" id="submit" onclick="window.location='thanks.html';">
+  </div>
+</div>
+</body>
+</html>
